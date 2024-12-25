@@ -1,0 +1,73 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+*.env
+
+# macOS system files
+.DS_Store
+
+# Virtual environment
+venv/
+env/
+
+# Logs and debug files
+*.log
+*.out
+*.err
+
+# Database files
+*.sqlite3
+*.db
+
+# Python egg files
+*.egg
+*.egg-info/
+dist/
+build/
+*.dist-info/
+
+# Pytest cache and coverage reports
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Jupyter Notebook checkpoints (if any)
+.ipynb_checkpoints/
+
+# Static files compiled locally (if applicable)
+instance/
+staticfiles/
+
+# Flask-specific
+instance/
+*.pid
+
+# IDE specific files
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Pip dependency cache
+*.egg-info/
+pip-log.txt
+
+# Ignore compiled C extensions
+*.so
+
+# Temporary files created by editors
+*.swp
+*.swo
+*.~undo-tree~
+*.bak
+
+# Node modules (if using Node for frontend assets)
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
