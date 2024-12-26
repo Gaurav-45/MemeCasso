@@ -24,6 +24,7 @@ defusedxml==0.7.1
 exceptiongroup==1.2.2
 filetype==1.2.0
 flask==3.1.0
+Flask-Cors==5.0.0
 frozenlist==1.5.0
 google-ai-generativelanguage==0.6.10
 google-api-core==2.24.0
