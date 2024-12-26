@@ -329,5 +329,11 @@ def get_templates():
     """Endpoint to get all available meme templates"""
     return jsonify(meme_generator.templates)
 
+@app.route('/', methods=['GET'])
+def get():
+    return jsonify({
+        "text": "Hello World"
+    })
+
 if __name__ == '__main__':
     app.run(debug=True)
