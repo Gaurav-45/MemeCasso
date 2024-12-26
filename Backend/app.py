@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import ChatPromptTemplate
 from pydantic import BaseModel, Field
@@ -14,6 +15,7 @@ from meme_templates import templates
 
 load_dotenv() 
 app = Flask(__name__)
+CORS(app)
 
 class MemeResponse(BaseModel):
     """Pydantic model for meme generation response"""
