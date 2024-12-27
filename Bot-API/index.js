@@ -54,12 +54,14 @@ const getRootPost = async (uri) => {
 
 const createHashtagFacets = (hashtags) => {
   const text = hashtags.join(" ");
-  const facets = hashtags.reduce((acc, tag, index) => {
-    const position = index === 0 ? 0 : acc.length + 1;
-    acc.push({
+  const facets = [];
+  let bytePosition = 0;
+
+  hashtags.forEach((tag) => {
+    facets.push({
       index: {
-        byteStart: position,
-        byteEnd: position + tag.length,
+        byteStart: bytePosition,
+        byteEnd: bytePosition + tag.length,
       },
       features: [
         {
@@ -68,8 +70,10 @@ const createHashtagFacets = (hashtags) => {
         },
       ],
     });
-    return acc;
-  }, []);
+    // Add 1 for the space between tags
+    bytePosition += tag.length + 1;
+  });
+
   return { text, facets };
 };
 
