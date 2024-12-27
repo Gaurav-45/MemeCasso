@@ -27,7 +27,7 @@ class MemeGenerator:
     def __init__(self):
         self.llm = ChatGoogleGenerativeAI(
             model="gemini-pro",
-            temperature=0.7,
+            temperature=0.9,
             google_api_key=os.getenv('GOOGLE_API_KEY')
         )
         
@@ -37,7 +37,7 @@ class MemeGenerator:
         self.templates = templates
         
         self.prompt = ChatPromptTemplate.from_messages([
-            ("human", """You are a meme generator API that MUST respond with ONLY valid JSON. Create a meme based on this input text: "{input_text}"
+            ("human", """You are a meme generator API that MUST respond with ONLY valid JSON. Create an extremely witty and clever meme based on this input text: "{input_text}"
 
             Available templates (pick one):
             {template_info}
@@ -52,6 +52,7 @@ class MemeGenerator:
             - Use exact template names from the list above
             - Number of captions must match template's panel count
             - Make it funny and creative
+            - Don't just restate the input - transform it into meme gold!
             - RESPOND WITH ONLY THE JSON OBJECT, NO OTHER TEXT""")
         ])
 
