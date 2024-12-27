@@ -1,5 +1,7 @@
 # MemeCasso - Tag. Laugh. Repeat
 
+MemeCasso's official Bluesky page [here](https://bsky.app/profile/did:plc:hihp6s2onmvyqpk5h3xtocs7).
+
 **Your Social Media Buddy for an Enhanced Experience**
 
 MemeCasso is a fully functional Bluesky bot designed to bring a dash of humor to your social media experience. By simply tagging MemeCasso, you can receive the perfect meme response to any post—making your interactions more engaging, entertaining, and fun!
