@@ -1,20 +1,31 @@
-import { BskyAgent } from "@atproto/api";
+import { AtpAgent } from "@atproto/api";
 import "dotenv/config";
 import { CronJob } from "cron";
 import axios from "axios";
 import sharp from "sharp";
 
-const agent = new BskyAgent({
+const agent = new AtpAgent({
   service: "https://bsky.social",
 });
 
 const MAX_IMAGE_SIZE = 10000000;
+let lastLoginTime = null;
+const LOGIN_TIMEOUT = 3600000; // 1 hour in milliseconds
+
 const loginToBluesky = async () => {
+  const currentTime = Date.now();
+
+  if (lastLoginTime && currentTime - lastLoginTime < LOGIN_TIMEOUT) {
+    console.log("Using existing session");
+    return;
+  }
+
   try {
     await agent.login({
       identifier: process.env.BLUESKY_USERNAME,
       password: process.env.BLUESKY_PASSWORD,
     });
+    lastLoginTime = currentTime;
     console.log("Logged in as:", process.env.BLUESKY_USERNAME);
   } catch (error) {
     console.error("Login failed:", error);
@@ -172,18 +183,17 @@ const checkMentions = async () => {
     if (mentions.length > 0) {
       for (const mention of mentions) {
         console.log("Processing mention by", mention.author.handle);
-
         const rootPost = await getRootPost(mention.record.reply?.parent?.uri);
-
         const reply = processMention(mention, rootPost);
       }
     }
   } catch (error) {
-    console.error("Check mentions error:", error);
-
     if (error.message?.includes("auth")) {
-      console.log("Attempting to re-login...");
+      lastLoginTime = null; // Reset login time to force new login
+      console.log("Session expired, logging in again...");
       await loginToBluesky();
+    } else {
+      console.error("Check mentions error:", error);
     }
   }
 };
@@ -193,7 +203,7 @@ const main = async () => {
   await checkMentions();
 };
 
-const schedule = "*/30 * * * * *";
+const schedule = "* * * * *";
 
 const job = new CronJob(schedule, main);
 
