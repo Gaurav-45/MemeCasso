@@ -82,7 +82,7 @@ python app.py
 ```bash
 curl -X POST http://localhost:5000/generate-meme \
 -H "Content-Type: application/json" \
--d '{"tweet": "What a beautiful day to code memes!"}'
+-d '{"tweet": "I miss the days when you bought Microsoft Office one time and then installed it and you had a functioning word processor forever."}'
 ```
 
 **Sample response**
