@@ -84,3 +84,24 @@ curl -X POST http://localhost:5000/generate-meme \
 -H "Content-Type: application/json" \
 -d '{"tweet": "What a beautiful day to code memes!"}'
 ```
+
+**Sample response**
+
+```json
+{
+  "captions": [
+    "Waiting for Microsoft to release a Word Processor I own forever",
+    ""
+  ],
+  "hashtags": [
+    "#OfficeForever",
+    "#WordProcessorNostalgia",
+    "#WaitingSkeleton",
+    "#SoftwareAsAService",
+    "#DigitalFatigue"
+  ],
+  "success": true,
+  "template_used": "Waiting Skeleton",
+  "url": "https://i.imgflip.com/9f03v6.jpg"
+}
+```
