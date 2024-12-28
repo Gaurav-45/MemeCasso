@@ -60,10 +60,10 @@ node index.js
 
 1. Deploy the API service to a hosting platform (e.g., Heroku, Render, Vercel, etc.).
 2. Copy the hosted API URL.
-3. Add the API URL to a free cron job service (e.g., cron-job.org) and set it to ping the / route every minute.
+3. Add the API URL to a free cron job service (e.g., cron-job.org) and set it to ping the (`/`) route every minute.
 
 This will ensure that the service continuously monitors mentions and processes them in real time.
 
 OR
 
-To run locally - ping the "/" endpoint eveyminute or run the daemon service from Bot/.
+To run locally - ping the (`/`) endpoint eveyminute or run the daemon service from (`Bot/`).
