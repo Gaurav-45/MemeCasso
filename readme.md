@@ -28,6 +28,13 @@ That's it—MemeCasso takes care of the rest!
 
 ---
 
+### Example Usage:
+![MemeCasso Example 1](memecasso1.PNG)
+
+![MemeCasso Example 2](memecasso2.PNG)
+
+---
+
 ## **Technical Overview**
 
 MemeCasso runs on a robust backend system designed for real-time meme generation. Here's how it works:
