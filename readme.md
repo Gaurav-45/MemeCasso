@@ -16,8 +16,6 @@ When users tag `@memecasso.bsky.social` on a Bluesky post, the bot works its mag
 
 How cool is that?
 
----
-
 ## **How to Use MemeCasso**
 
 1. Post something fun, interesting, or just plain random on Bluesky.
@@ -26,14 +24,10 @@ How cool is that?
 
 That's it—MemeCasso takes care of the rest!
 
----
-
 ### Example Usage:
 ![MemeCasso Example 1](memecasso1.PNG)
 
 ![MemeCasso Example 2](memecasso2.PNG)
-
----
 
 ## **Technical Overview**
 
@@ -57,22 +51,16 @@ MemeCasso runs on a robust backend system designed for real-time meme generation
 4. **Posting the Response**:
    - The bot replies to the original post with the meme, ensuring a seamless and delightful experience for users.
 
----
-
 ## **Why MemeCasso?**
 
 - **Effortless Fun**: Turn any post into a hilarious interaction with zero effort.
 - **Highly Relevant Memes**: Enjoy memes that are tailored to your post's context.
 - **Interactive and Engaging**: Stand out on Bluesky with personalized meme replies.
 
----
-
 ## **Tech Stack**
 
 - **Backend APIs**: Flask, ImageFlip API.
 - **Daemon Service**: Node.js, Express.js, Bluesky APIs
-
----
 
 **Tag. Laugh. Repeat.**  
 Join the fun on Bluesky by tagging `@memecasso.bsky.social` and let the memes roll in!
